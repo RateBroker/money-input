@@ -56,7 +56,8 @@ Custom property | Description | Default
             allowed-pattern="[0-9\.\,\-]"
             disabled$="[[disabled]]"
             readonly$="[[readonly]]"
-            placeholder$="[[placeholder]]">
+            placeholder$="[[placeholder]]"
+            focused="{{focused}}">
       <div prefix class="prefix">[[currency]]</div>
     </paper-input>
   </template>
@@ -177,6 +178,12 @@ Custom property | Description | Default
         placeholder: {
           type: String,
           value: ''
+        },
+
+        /** Boolean value indicating whether the paper-input is focused **/
+        focused: {
+          type: Boolean,
+          reflectToAttribute: true
         }
       },
 
