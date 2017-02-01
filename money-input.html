@@ -334,6 +334,10 @@ Custom property | Description | Default
       /** Return validation based on required, max and min configs */
       validate: function(){
         return this.$.input.validate() && this._validate(this.$.input.value);
+      },
+
+      focus: function () {
+        return this.$.input.focus();
       }
     });
 
