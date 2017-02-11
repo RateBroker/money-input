@@ -217,7 +217,7 @@ Custom property | Description | Default
       },
 
       _valueChange: function() {
-        if (this._formattedValue != this.value) {
+        if (this._formattedValue !== this.value) {
           if(!isNaN(parseFloat(this.value)) && isFinite(this.value)) {
             var signal = this._getSignal('' + this.value);
             if((''+this.value).length >= this.precision) {
