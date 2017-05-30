@@ -322,11 +322,11 @@ Custom property | Description | Default
 
         if(n > this.maxValue){
           this.$.input.invalid = true;
-          this.$.input.errorMessage = this.maxValueErrorMessage + ' ' + this.maxValue;
+          this.$.input.errorMessage = this.maxValueErrorMessage + ' $' + this._parse(this._removeUI(this.maxValue.toString()));
           return false;
         } else if(n < this.minValue){
           this.$.input.invalid = true;
-          this.$.input.errorMessage = this.minValueErrorMessage + ' ' + this.minValue;
+          this.$.input.errorMessage = this.minValueErrorMessage + ' $' + this._parse(this._removeUI(this.minValue.toString()));
           return false;
         } else {
           this.$.input.invalid = false;
