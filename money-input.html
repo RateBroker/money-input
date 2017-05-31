@@ -139,13 +139,15 @@ Custom property | Description | Default
         /** Max value accepted by field */
         maxValue: {
           type: Number,
-          value: 1000000
+          value: 1000000,
+          observer: 'maxValueChanged'
         },
 
         /** Min value accepted by field */
         minValue: {
           type: Number,
-          value: 0
+          value: 0,
+          observer: 'minValueChanged'
         },
 
         /** Decimal precision -> Use "0" for integer amount */
@@ -332,6 +334,18 @@ Custom property | Description | Default
           this.$.input.invalid = false;
           this.$.input.errorMessage = '';
           return true;
+        }
+      },
+
+      maxValueChanged: function () {
+        if (this.$.input.invalid || !this._validate(this.$.input.value)) {
+          this.validate();
+        }
+      },
+
+      minValueChanged: function () {
+        if (this.$.input.invalid || !this._validate(this.$.input.value)) {
+          this.validate();
         }
       },
 
